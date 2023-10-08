@@ -1,0 +1,41 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: bisque;
+}
+
+.caption{
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(143, 121, 93, 0.9);;
+}
+
+.footer_contents {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: right;
+    font-size: smaller;
+}
+
+#main{
+    text-align: center;
+    background-color: white;
+    width: 75%;
+    height: 100%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    border-radius: 25px;
+    padding: 5px;
+    color: #3c3c4b;
+    margin-bottom: 60px;
+}
+
+#kangarooIsland{
+    padding-left: 25%;
+}
