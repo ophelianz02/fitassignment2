@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Commonwealth Games Medalist Countries",
+  "width": 800,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/ophelianz02/Datavisualisation2/main/commonwealth_games_2022.csv"
+        },
+        "key": "team",
+        "fields": ["total"]
+      }
+    },
+    {"calculate": "datum.total + 0.1", "as": "Total Medals"}
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Total Medals",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "team"},
+      {"field": "total", "type": "quantitative"}
+    ]
+  },
+  "config": {}
+}
