@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Commonwealth Games 2022</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+
+    <link rel="shortcut icon" type="image/png" href="img/ausIcon.png"/>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="main">
+        <h1>The Commonwealth Games Medalist Countries</h1>
+        <div id="intro">
+            <h2>Introduction</h2>
+            <p>
+                The Commonwealth Games, also known as the Commonwealth Games, is a multi-sport event that brings together athletes from various countries and 
+                territories that are part of the Commonwealth of Nations. The Commonwealth Games feature a wide range of sports, including athletics, swimming, 
+                cycling, gymnastics, boxing, and many others.
+            </p>
+            <div id="stateSummary"></div> 
+            <div class="caption">Figure 1: Distribution of medals won for Australia <a href="https://en.wikipedia.org/wiki/Australia_at_the_Commonwealth_Games">Source</a>.</div>
+            </br>
+            <p>
+                Here is a map showing the distribution of medals won from commonwealth countries across the world. 
+            </p>
+        </div>
+        <div id="maps">
+            <h2>Map of World</h2>
+            <h3>Medal Distribution</h3>
+            It is generally true that wealthier countries tend to win more medals in international sporting events, including the Olympics and Commonwealth Games. 
+            There are several reasons for this correlation including more investment in sports. 
+        
+            <div id="wholeCountryWorst"></div>
+            <div class="caption">Figure 2: Commonwealth games continent distribution</div>
+            </br>
+            Figure 2 shows a snapshot of the distriution of atheletes. The games involve athletes from countries and territories that are part of the Commonwealth of Nations. 
+            The Commonwealth of Nations, often referred to as the Commonwealth, is a political association of 56 member states, most of which are former territories of the 
+            British Empire.
+
+            </br>
+            Some of the most prominent countries in the Commonwealth include:
+
+            United Kingdom
+            Canada
+            Australia
+            India
+            South Africa
+            New Zealand
+            Jamaica
+            Malaysia
+            Singapore
+            Nigeria
+            </br>
+            <h3>Kangaroo Island</h3>
+            <div id="kangarooIsland"></div>
+            <div class="caption">Figure 3: Prominent Australian Swimmer Susie O'Neill. </div>
+            </br>
+            <div>
+                    Susan O'Neill, AM is an Australian former competitive swimmer from Brisbane, Queensland, nicknamed "Madame Butterfly". 
+                    She achieved eight Olympic Games medals during her swimming career. She has in the past won 16
+                    CommonWealth Games medals. 
+                    
+                    <img src="img/Glossy_Black_Cockatoos.jpeg" alt="Glossy Black Cockatoos" style="width:20%;">
+                    <div class="caption">Figure 4: Susie O'Neill Swimming at the Commonwealth games.</div>
+            </div>
+        </div>
+
+        <div id="numbers">
+            <h2>Numbers and Statistics</h2>
+            <h3>So how big were the commonwealth games?</h3>
+            The size of the Commonwealth Games can vary, but it is a substantial multi-sport event that brings together athletes, officials, and spectators from a diverse 
+            group of nations and territories within the Commonwealth of Nations. The scale of the event depends on factors such as the number of participating countries, 
+            the sports program, and the host city's infrastructure and resources.
+            <div id="fireRanking"></div>
+            <div class="caption">Figure 5: The largest bushfires of the 21st Century. <a href="https://en.wikipedia.org/wiki/List_of_largest_fires_of_the_21st-century">Source</a>.</div>
+            </br>
+            Once numbers start getting larger than what we deal with in our day to day lives, humans are notoriously
+            bad at visualising how big such numbers really are. Figure 6 should help with understanding 
+            the size of the 2019/20 Australian bushfires.
+            <div id="compareSize"></div>
+            <div class="caption">Figure 6: The Australian 2019/2020 Busfires, compared to other areas.</div>
+            </br>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer_contents">Ophelia Ge - 32537697. <a href="https://www.kaggle.com/datasets/ramjasmaurya/commonwealth-games-2022?select=COMMONWEALTH+GAMES+1930-2018++-+MEDAL+TALLY.csv">Primary Data Source</a></div>
+    </div>
+
+    <script src="js/vegamain.js"></script>
+</body>
+</html>
