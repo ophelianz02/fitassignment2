@@ -24,7 +24,14 @@
                 cycling, gymnastics, track, and many others.
             </p>
             <div id="vega"></div> 
-            
+            <script type="text/javascript">
+                var spec = "https://raw.githubusercontent.com/crcorbett/FIT3179/master/vegalite/ped_map.json";
+                vegaEmbed('#pedestrian', spec, opt = {
+                    renderer: "svg",
+                    actions: true
+                }).then(function (result) {
+                    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+                }).catch(console.error);
             <div class="caption">Figure 1: Distribution of medals won for Australia <a href="https://en.wikipedia.org/wiki/Australia_at_the_Commonwealth_Games">Source</a>.</div>
             </br>
             <p>
