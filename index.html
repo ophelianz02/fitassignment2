@@ -34,15 +34,23 @@
                     <h2>Medal distribution</h2>
                     <div class = "text1">
                         <p>The choropleth map below gives a good overall view of the distribution of medals across countries.</p>
+                        <div id="cholopleth map"></div>
+                            <script type="text/javascript">
+                                var data_location = "data/MEDAL TALLY.csv"
+
+                                // var spec2 = "js/cloropleth.vg.json";
+                                var spec2 = "js/cloropleth.vg.json"
+
+                                vegaEmbed('#cholopleth map', spec2).then(function(result) {
+                                    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+                                }).catch(console.error);
+                            </script>
                         <br>
                         <img src="img/cloropleth map .png" alt="commonwealthbanner" style="width:40%;">
                         <br>
-                        <br>
-                        <img src="img/medal_counts.png" alt="commonwealthbanner" style="width:40%;">
-                        <br>
                         <div class = "pure-u-1-1">
                             <div id = "choropleth_map" class = "vis-container"></div>
-                            <p>Note: placeholder image, having issues with embedding vegalite </p>
+                            
                             <p>Note: hover to the country for more details</p>
                             <p><b>Australia</b> is the <b>top</b> for number of <b>medals.</p>
                         </div>
