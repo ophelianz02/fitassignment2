@@ -31,27 +31,8 @@
                 territories that are part of the Commonwealth of Nations. The Commonwealth Games feature a wide range of sports, including athletics, swimming, 
                 cycling, gymnastics, boxing, and many others.
             </p>
-            <div class = "pure-g">
-                <div class = "pure-u-1-1">
-                    <h2>Medal distribution</h2>
-                    <div class = "text1">
-                        <p>The choropleth map below gives a good overall view of the distribution of medals across countries.</p>
-                        <body>
-                            <div id="cloroplethmap">
-                            </div>
-                        </body>
-                            <p>Note: hover to the country for more details</p>
-                            <p><b>Australia</b> is the <b>top</b> for number of <b>medals.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="caption">Figure 1: Distribution of medals won for Australia <a href="https://en.wikipedia.org/wiki/Australia_at_the_Commonwealth_Games">Source</a>.</div>
-            </br>
-            <p>
-                Here is a map showing the distribution of medals won from commonwealth countries across the world. 
-            </p>
-            <img src="img/comingsoo.png" alt="commonwealthbanner" style="width:40%;">
+            <div id="cloroplethmap"></div> 
+            <div class="caption">Figure 1: A summary of the medals earned by each country <a href="https://en.wikipedia.org/wiki/2022_Commonwealth_Games">Source</a>.</div>
         </div>
         <div id="maps">
             <h2>Map of World</h2>
@@ -108,12 +89,6 @@
         <div class="footer_contents">Ophelia Ge - 32537697. <a href="https://www.kaggle.com/datasets/ramjasmaurya/commonwealth-games-2022?select=COMMONWEALTH+GAMES+1930-2018++-+MEDAL+TALLY.csv">Primary Data Source</a></div>
     </div>
 
-    <script type = "text/javascript">
-        var vis = ["cloropleth.vg.json"]
-      
-        vegaEmbed('#choropleth_map', vis[0], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
     
-    </script>
 </body>
 </html>
