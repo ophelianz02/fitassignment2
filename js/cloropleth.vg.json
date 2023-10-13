@@ -9,7 +9,7 @@
   "data": [
     {
       "name": "source_1",
-      "url": "https://raw.githubusercontent.com/ophelianz02/fitassignment2/main/data/MEDAL%20TALLY.csv",
+      "url": "MEDAL TALLY.csv",
       "format": {"type": "csv", "delimiter": ","}
     },
     {
