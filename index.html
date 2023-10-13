@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
 
+    <script src="vegalite.js"></script>
+    
     <link rel="shortcut icon" type="image/png" href="img/ausIcon.png"/>
     <link rel="stylesheet" href="css/main.css">
 
@@ -34,23 +36,10 @@
                     <h2>Medal distribution</h2>
                     <div class = "text1">
                         <p>The choropleth map below gives a good overall view of the distribution of medals across countries.</p>
-                        <div id="cholopleth map"></div>
-                            <script type="text/javascript">
-                                var data_location = "data/https://raw.githubusercontent.com/ophelianz02/fitassignment2/main/data/MEDAL%20TALLY.csv"
-
-                                // var spec2 = "js/cloropleth.vg.json";
-                                var spec2 = "js/cloropleth.vg.json"
-
-                                vegaEmbed('#cholopleth map', spec2).then(function(result) {
-                                    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-                                }).catch(console.error);
-                            </script>
-                        <br>
-                        <img src="img/cloropleth map .png" alt="commonwealthbanner" style="width:40%;">
-                        <br>
-                        <div class = "pure-u-1-1">
-                            <div id = "choropleth_map" class = "vis-container"></div>
-                            
+                        <body>
+                            <div id="cloroplethmap">
+                            </div>
+                        </body>
                             <p>Note: hover to the country for more details</p>
                             <p><b>Australia</b> is the <b>top</b> for number of <b>medals.</p>
                         </div>
