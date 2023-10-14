@@ -1,0 +1,137 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "width": 600,
+  "height": 400,
+  "title": {"text": "Medal Distribution by Country", "frame": "group"},
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/ophelianz02/fitassignment2/main/data/MEDAL%20TALLY.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {"type": "filter", "expr": "datum.TOTAL > Medals_Above"},
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"TOTAL\"]) && isFinite(+datum[\"TOTAL\"]) && isValid(datum[\"Gold\"]) && isFinite(+datum[\"Gold\"])"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "Medals_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 200,
+        "step": 1,
+        "name": "Minimum Medals: "
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "symbol",
+      "style": ["circle"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "fill": {"scale": "color", "field": "TEAM"},
+          "tooltip": {
+            "signal": "{\"TEAM\": isValid(datum[\"TEAM\"]) ? datum[\"TEAM\"] : \"\"+datum[\"TEAM\"], \"TOTAL\": format(datum[\"TOTAL\"], \",\"), \"Gold\": format(datum[\"Gold\"], \",\")}"
+          },
+          "ariaRoleDescription": {"value": "circle"},
+          "description": {
+            "signal": "\"Total Medals: \" + (format(datum[\"TOTAL\"], \"\")) + \"; Gold: \" + (format(datum[\"Gold\"], \"\")) + \"; TEAM: \" + (isValid(datum[\"TEAM\"]) ? datum[\"TEAM\"] : \"\"+datum[\"TEAM\"]) + \"; TOTAL: \" + (format(datum[\"TOTAL\"], \",\"))"
+          },
+          "x": {"scale": "x", "field": "TOTAL"},
+          "y": {"scale": "y", "field": "Gold"},
+          "shape": {"value": "circle"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "log",
+      "domain": [1, 200],
+      "range": [0, {"signal": "width"}]
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [0, 70],
+      "range": [{"signal": "height"}, 0],
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "source_0", "field": "TEAM", "sort": true},
+      "range": "category"
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "gridScale": "y",
+      "grid": true,
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "gridScale": "x",
+      "grid": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "Total Medals",
+      "labelFlush": true,
+      "labelOverlap": "greedy",
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "Gold",
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 0
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "symbolType": "circle",
+      "title": "TEAM",
+      "encode": {"symbols": {"update": {"opacity": {"value": 0.7}}}}
+    }
+  ],
+  "config": {}
+}
